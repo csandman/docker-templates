@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Ripper Transcoder</Name>
+  <Name>ripper-transcoder</Name>
   <Date>2020-3-12</Date>
   <Project>https://github.com/csandman/docker-ripper-transcoder</Project>
   <Repository>csandman/docker-ripper-transcoder</Repository>
@@ -43,7 +43,12 @@ To add your purchased license key to MakeMKV/Ripper add it to the enter-your-key
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment/>
+  <Environment>
+    <Variable>
+      <Name>DELETE_AFTER_TRANSCODE</Name>
+      <Value>yes|no</Value>
+    </Variable>
+  </Environment>
   <Config Name="Optical Drive" Target="/dev/sr0" Default="" Mode="rw" Description="Required path of your optical drive" Type="Path" Display="always" Required="false" Mask="false">/dev/sr0</Config>
   <Config Name="Output Directory" Target="/out" Default="" Mode="rw" Description="Output files are stored here" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Downloads/</Config>
   <Config Name="Config Directory" Target="/config/" Default="/mnt/user/appdata/ripper" Mode="rw" Description="Configuration files are stored here" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ripper-transcoder</Config>
