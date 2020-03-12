@@ -1,55 +1,58 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>ripper-transcoder</Name>
-  <Date>2020-3-12</Date>
-  <Project>https://github.com/csandman/docker-ripper-transcoder</Project>
-  <Repository>csandman/docker-ripper-transcoder</Repository>
-  <Registry>https://hub.docker.com/repository/docker/csandman/ripper-transcoder</Registry>
-  <Network>host</Network>
+  <Repository>csandman/ripper-transcoder</Repository>
+  <Registry>https://hub.docker.com/r/csandman/ripper-transcoder/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
   <Privileged>true</Privileged>
-  <Support>https://github.com/csandman/docker-ripper-transcoder/issues</Support>
-  <Overview>An automated solution for ripping DVDs and Blurays and transcoding them to a reasonable standard</Overview>
-  <Category>MediaApp:Video Tools:</Category>
+  <Support>https://hub.docker.comhttps://github.com/csandman/docker-ripper-transcoder/issues/r/csandman/ripper-transcoder/</Support>
+  <Project>https://github.com/csandman/docker-ripper-transcoder</Project>
+  <Overview>An automated solution for ripping DVDs and Blurays and transcoding them to a reasonable standard.</Overview>
+  <Category>Backup: HomeAutomation: Tools: MediaApp:Video MediaServer:Video</Category>
   <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/ripper-transcoder.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/ripper-transcoder.png</Icon>
-  <ExtraParams>--device=/dev/sr0:/dev/sr0</ExtraParams>
-  <DateInstalled>1484340258</DateInstalled>
-  <Description>This container will detect optical disks by their type and rip them automatically.[BR]&#xD;
-[BR]&#xD;
-[B]To properly detect optical disk types in a docker environment this script relies on makemkvcon output.[/B][BR]&#xD;
-[BR]&#xD;
-MakeMKV is free while in Beta, but requires a valid license key. Ripper tries to fetch the latest free beta key on launch. Without a purchased license key Ripper may stop running at any time.[BR]
-[BR]
-To add your purchased license key to MakeMKV/Ripper add it to the enter-your-key-then-rename-to.settings.conf at app_Key = "[ENTER KEY HERE]" and rename the file to settings.conf.</Description>
+  <TemplateURL/>
+  <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1584054873</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>An automated solution for ripping DVDs and Blurays and transcoding them to a reasonable standard.</Description>
   <Networking>
-    <Mode>host</Mode>
+    <Mode>bridge</Mode>
     <Publish/>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/dev/sr0</HostDir>
-      <ContainerDir>/dev/sr0</ContainerDir>
+      <HostDir/>
+      <ContainerDir>/out/transcodes</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/Downloads/</HostDir>
-      <ContainerDir>/out</ContainerDir>
+      <HostDir/>
+      <ContainerDir>/out/rips</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/ripper-transcoder</HostDir>
-      <ContainerDir>/config/</ContainerDir>
+      <HostDir/>
+      <ContainerDir>/out/incomplete</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment>
     <Variable>
-      <Name>DELETE_AFTER_TRANSCODE</Name>
       <Value>yes|no</Value>
+      <Name>SAVE_SOURCE</Name>
+      <Mode/>
     </Variable>
   </Environment>
-  <Config Name="Optical Drive" Target="/dev/sr0" Default="" Mode="rw" Description="Required path of your optical drive" Type="Path" Display="always" Required="false" Mask="false">/dev/sr0</Config>
-  <Config Name="Output Directory" Target="/out" Default="" Mode="rw" Description="Output files are stored here" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Downloads/</Config>
-  <Config Name="Config Directory" Target="/config/" Default="/mnt/user/appdata/ripper" Mode="rw" Description="Configuration files are stored here" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ripper-transcoder</Config>
+  <Labels/>
+  <Config Name="Save Source Video" Target="SAVE_SOURCE" Default="" Mode="" Description="Should the raw source video file be saved? (yes/no)" Type="Variable" Display="always" Required="true" Mask="false">yes|no</Config>
+  <Config Name="Transcode Path" Target="/out/transcodes" Default="" Mode="rw" Description="The location to store the final transcoded movie files" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Rips Path" Target="/out/rips" Default="" Mode="rw" Description="The location to store the intermediate ripped movie files" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Incomplete Path" Target="/out/incomplete" Default="" Mode="rw" Description="The location to store the rips in progress" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Optical Drive" Target="" Default="" Mode="" Description="The path of your optical drive" Type="Device" Display="always" Required="false" Mask="false">/dev/sr0</Config>
 </Container>
