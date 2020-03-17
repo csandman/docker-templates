@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>ripper-transcoder</Name>
-  <Repository>csandman/ripper-transcoder:1.0.1</Repository>
+  <Repository>csandman/ripper-transcoder:latest</Repository>
   <Registry>https://hub.docker.com/r/csandman/ripper-transcoder/</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
@@ -13,7 +13,7 @@
   <WebUI/>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/ripper-transcoder.png</Icon>
-  <ExtraParams/>
+  <ExtraParams>--device=/dev/sr0:/dev/sr0</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DonateText/>
@@ -52,7 +52,6 @@
       <Mode/>
     </Variable>
   </Environment>
-  <ExtraParams>--device=/dev/sr0:/dev/sr0</ExtraParams>
   <Labels/>
   <Config Name="Save Source Video" Target="SAVE_SOURCE" Default="" Mode="" Description="Should the raw source video file be saved? (yes/no)" Type="Variable" Display="always" Required="true" Mask="false">yes</Config>
   <Config Name="Transcode Path" Target="/out/transcodes" Default="" Mode="rw" Description="The location to store the final transcoded movie files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/ripper-transcoder-transcodes/</Config>
