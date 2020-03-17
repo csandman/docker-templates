@@ -20,7 +20,7 @@
   <DonateLink/>
   <Description>An automated solution for ripping DVDs and Blurays and transcoding them to a reasonable standard.</Description>
   <Networking>
-    <Mode>bridge</Mode>
+    <Mode>host</Mode>
     <Publish/>
   </Networking>
   <Data>
@@ -52,11 +52,12 @@
       <Mode/>
     </Variable>
   </Environment>
+  <ExtraParams>--device=/dev/sr0:/dev/sr0</ExtraParams>
   <Labels/>
   <Config Name="Save Source Video" Target="SAVE_SOURCE" Default="" Mode="" Description="Should the raw source video file be saved? (yes/no)" Type="Variable" Display="always" Required="true" Mask="false">yes</Config>
   <Config Name="Transcode Path" Target="/out/transcodes" Default="" Mode="rw" Description="The location to store the final transcoded movie files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/ripper-transcoder-transcodes/</Config>
   <Config Name="Rips Path" Target="/out/rips" Default="" Mode="rw" Description="The location to store the intermediate ripped movie files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/ripper-transcoder-rips/</Config>
   <Config Name="Incomplete Path" Target="/out/incomplete" Default="" Mode="rw" Description="The location to store the rips in progress" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="Optical Drive" Target="" Default="" Mode="" Description="The path of your optical drive" Type="Device" Display="always" Required="false" Mask="false">/dev/sr0</Config>
-  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/ripper-transcoder/</Config>
+  <Config Name="Optical Drive" Target="" Default="" Mode="rw" Description="The path of your optical drive" Type="Device" Display="always" Required="false" Mask="false">/dev/sr0</Config>
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ripper-transcoder/</Config>
 </Container>
