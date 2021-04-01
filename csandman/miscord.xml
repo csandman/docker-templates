@@ -1,28 +1,37 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <Container version="2">
   <Name>Miscord</Name>
   <Repository>miscord/miscord</Repository>
-  <Registry>https://hub.docker.com/r/miscord/miscord/dockerfile</Registry>
+  <Registry>https://hub.docker.com/r/miscord/miscord</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/miscord/miscord/issues</Support>
   <Project>https://miscord.net/</Project>
-  <Overview>Miscord is a highly configurable and easy to use bridge between Discord and Messenger. It uses libfb and discord.js libraries, it's written in TypeScript and runs basically on any system that supports Node.js, including Android phones and Raspberry Pi.</Overview>
-  <Category>GameServers: Tools:</Category>
+  <Overview
+  >Miscord is a highly configurable and easy to use bridge between Discord and Messenger. It uses libfb and discord.js libraries, it's written in TypeScript and runs basically on any system that supports Node.js, including Android phones and Raspberry Pi.</Overview>
+  <Category>Tools: Network:Messenger</Category>
   <WebUI>http://[IP]:[PORT:9448]/</WebUI>
-  <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/miscord.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
-  <DonateText>Miscord is currently built by ptrcnull. If you have any skills and free time, any contributions to the code are welcome. If you can't help that way, you might donate on PayPal or OpenCollective.</DonateText>
+  <TemplateURL />
+  <Icon
+  >https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/miscord.png</Icon>
+  <ExtraParams />
+  <PostArgs />
+  <CPUset />
+  <DonateText
+  >Miscord is currently built by ptrcnull. If you have any skills and free time, any contributions to the code are welcome. If you can't help that way, you might donate on PayPal or OpenCollective.</DonateText>
   <DonateLink>https://opencollective.com/miscord</DonateLink>
-  <Description>Miscord is a highly configurable and easy to use bridge between Discord and Messenger. It uses libfb and discord.js libraries, it's written in TypeScript and runs basically on any system that supports Node.js, including Android phones and Raspberry Pi.</Description>
+  <Description
+  >Miscord is a highly configurable and easy to use bridge between Discord and Messenger. It uses libfb and discord.js libraries, it's written in TypeScript and runs basically on any system that supports Node.js, including Android phones and Raspberry Pi.</Description>
   <Networking>
     <Mode>bridge</Mode>
-    <Publish/>
+    <Publish>
+      <Port>
+        <HostPort>9448</HostPort>
+        <ContainerPort>9448</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
@@ -31,7 +40,28 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment/>
-  <Labels/>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/miscord" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/miscord</Config>
+  <Environment />
+  <Labels />
+  <Config
+    Name="AppData Config Path"
+    Target="/config"
+    Default="/mnt/user/appdata/miscord"
+    Mode="rw"
+    Description="Container Path: /config"
+    Type="Path"
+    Display="advanced-hide"
+    Required="true"
+    Mask="false"
+  >/mnt/user/appdata/miscord</Config>
+  <Config
+    Name="WebUI Port"
+    Target="9448"
+    Default="9448"
+    Mode="tcp"
+    Description="The port at which you can reach the WebUI"
+    Type="Port"
+    Display="advanced-hide"
+    Required="true"
+    Mask="false"
+  >9448</Config>
 </Container>
