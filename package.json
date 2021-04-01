@@ -1,0 +1,25 @@
+{
+  "name": "docker-templates",
+  "version": "1.0.0",
+  "description": "A collection of docker templates for use in Unraid",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csandman/docker-templates.git"
+  },
+  "keywords": [
+    "docker",
+    "unraid",
+    "template"
+  ],
+  "author": "Chris Sandvik <chirs.sandvik@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csandman/docker-templates/issues"
+  },
+  "homepage": "https://github.com/csandman/docker-templates#readme",
+  "devDependencies": {
+    "@prettier/plugin-xml": "^0.13.1",
+    "prettier": "^2.2.1"
+  }
+}
