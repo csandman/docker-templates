@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<Container version="2">
+  <Name>audiobook-scraper</Name>
+  <Repository>csandman/audiobook-scraper</Repository>
+  <Registry
+  >https://hub.docker.com/repository/docker/csandman/audiobook-scraper/</Registry>
+  <Network>bridge</Network>
+  <MyIP />
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://github.com/csandman/audiobook-scraper-web/issues</Support>
+  <Project>https://github.com/csandman/audiobook-scraper-web</Project>
+  <Overview />
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:3456]/</WebUI>
+  <TemplateURL />
+  <Icon
+  >https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/audiobook-scraper.png</Icon>
+  <ExtraParams />
+  <PostArgs />
+  <CPUset />
+  <DateInstalled>1628557387</DateInstalled>
+  <DonateText />
+  <DonateLink />
+  <Description />
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3456</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/Audiobook Scraper/source</HostDir>
+      <ContainerDir>/source</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Audiobook Scraper/final</HostDir>
+      <ContainerDir>/final</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/audiobook-scraper</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment />
+  <Labels />
+  <Config
+    Name="Web UI Port"
+    Target="3000"
+    Default="3456"
+    Mode="tcp"
+    Description="Container Port: 3000"
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >3456</Config>
+  <Config
+    Name="Audiobook Source Folder Path"
+    Target="/source"
+    Mode="rw"
+    Description="Container Path: /source"
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >/mnt/user/Media/Audiobook Scraper/source</Config>
+  <Config
+    Name="Audiobook Output Folder Path"
+    Target="/final"
+    Mode="rw"
+    Description="Container Path: /final"
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >/mnt/user/Media/Audiobook Scraper/final</Config>
+  <Config
+    Name="AppData Config Path"
+    Target="/config"
+    Default="/mnt/user/appdata/audiobook-scraper"
+    Mode="rw"
+    Description="Container Path: /config"
+    Type="Path"
+    Display="advanced-hide"
+    Required="true"
+    Mask="false"
+  >/mnt/user/appdata/audiobook-scraper</Config>
+</Container>
