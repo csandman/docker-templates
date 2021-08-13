@@ -8,8 +8,9 @@
   <MyIP />
   <Shell>sh</Shell>
   <Privileged>true</Privileged>
-  <Support>https://github.com/csandman/audiobook-scraper-web/issues</Support>
-  <Project>https://github.com/csandman/audiobook-scraper-web</Project>
+  <Support
+  >https://github.com/insomnia-dev/audiobook-scraper-web/issues</Support>
+  <Project>https://github.com/insomnia-dev/audiobook-scraper-web</Project>
   <Overview />
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:3456]/</WebUI>
@@ -35,12 +36,12 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/Media/Audiobook Scraper/source</HostDir>
+      <HostDir />
       <ContainerDir>/source</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/Media/Audiobook Scraper/final</HostDir>
+      <HostDir />
       <ContainerDir>/final</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
