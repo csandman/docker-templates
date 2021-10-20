@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<Container version="2">
+  <Name>Dim</Name>
+  <Repository>vgarleanu/dim</Repository>
+  <Registry>https://hub.docker.com/r/vgarleanu/dim</Registry>
+  <Network>bridge</Network>
+  <MyIP />
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Dusk-Labs/dim/issues</Support>
+  <Project>https://github.com/Dusk-Labs/dim</Project>
+  <Overview
+  >Dim is a self hosted media manager. With minimal setup, Dim will organize and beautify your media collections, letting you access and play them anytime from anywhere.</Overview>
+  <Category>Cloud: MediaApp:Video MediaServer:Video</Category>
+  <WebUI>http://[IP]:[PORT:32345]/</WebUI>
+  <TemplateURL />
+  <Icon
+  >https://raw.githubusercontent.com/Dusk-Labs/dim/master/ui/public/static/logoBlack128.png</Icon>
+  <ExtraParams />
+  <PostArgs />
+  <CPUset />
+  <DateInstalled>1634688243</DateInstalled>
+  <DonateText />
+  <DonateLink />
+  <Description
+  >Dim is a self hosted media manager. With minimal setup, Dim will organize and beautify your media collections, letting you access and play them anytime from anywhere.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>32345</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/</HostDir>
+      <ContainerDir>/media</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/dim</HostDir>
+      <ContainerDir>/opt/dim/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment />
+  <Labels />
+  <Config
+    Name="Web UI Port"
+    Target="8000"
+    Default="8000"
+    Mode="tcp"
+    Description="Container Port: 8000"
+    Type="Port"
+    Display="always"
+    Required="false"
+    Mask="false"
+  />
+  <Config
+    Name="Media"
+    Target="/media"
+    Default=""
+    Mode="rw"
+    Description="Container Path: /media"
+    Type="Path"
+    Display="always"
+    Required="false"
+    Mask="false"
+  />
+  <Config
+    Name="/dev/dri/renderD128"
+    Target=""
+    Default=""
+    Mode=""
+    Description="Graphics passthrough for hardware transcoding"
+    Type="Device"
+    Display="always"
+    Required="false"
+    Mask="false"
+  >/dev/dri/renderD128</Config>
+  <Config
+    Name="Config"
+    Target="/opt/dim/config"
+    Default="/mnt/user/appdata/dim"
+    Mode="rw"
+    Description="Container Path: /opt/dim/config"
+    Type="Path"
+    Display="advanced-hide"
+    Required="true"
+    Mask="false"
+  >/mnt/user/appdata/dim</Config>
+</Container>
