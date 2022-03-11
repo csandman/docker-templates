@@ -12,14 +12,14 @@
   <Overview
   >Dim is a self hosted media manager. With minimal setup, Dim will organize and beautify your media collections, letting you access and play them anytime from anywhere.</Overview>
   <Category>Cloud: MediaApp:Video MediaServer:Video</Category>
-  <WebUI>http://[IP]:[PORT:32345]/</WebUI>
+  <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <TemplateURL />
   <Icon
   >https://raw.githubusercontent.com/Dusk-Labs/dim/master/ui/public/static/logoBlack128.png</Icon>
   <ExtraParams />
   <PostArgs />
   <CPUset />
-  <DateInstalled>1634688243</DateInstalled>
+  <DateInstalled />
   <DonateText />
   <DonateLink />
   <Description
@@ -28,7 +28,7 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>32345</HostPort>
+        <HostPort />
         <ContainerPort>8000</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -36,7 +36,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/Media/</HostDir>
+      <HostDir />
       <ContainerDir>/media</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -56,7 +56,7 @@
     Description="Container Port: 8000"
     Type="Port"
     Display="always"
-    Required="false"
+    Required="true"
     Mask="false"
   />
   <Config
@@ -64,10 +64,10 @@
     Target="/media"
     Default=""
     Mode="rw"
-    Description="Container Path: /media"
+    Description="The path to your local media"
     Type="Path"
     Display="always"
-    Required="false"
+    Required="true"
     Mask="false"
   />
   <Config
