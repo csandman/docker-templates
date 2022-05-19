@@ -13,7 +13,7 @@
   <Project>https://github.com/insomnia-dev/audiobook-scraper-web</Project>
   <Overview />
   <Category>Tools:</Category>
-  <WebUI>http://[IP]:[PORT:3456]/</WebUI>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <TemplateURL />
   <Icon
   >https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/audiobook-scraper.png</Icon>
