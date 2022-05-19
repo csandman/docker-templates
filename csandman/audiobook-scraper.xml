@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <Container version="2">
   <Name>audiobook-scraper</Name>
-  <Repository>csandman/audiobook-scraper</Repository>
+  <Repository>csandman/audiobook-scraper:latest</Repository>
   <Registry
   >https://hub.docker.com/repository/docker/csandman/audiobook-scraper/</Registry>
   <Network>bridge</Network>
@@ -20,7 +20,7 @@
   <ExtraParams />
   <PostArgs />
   <CPUset />
-  <DateInstalled>1628557387</DateInstalled>
+  <DateInstalled />
   <DonateText />
   <DonateLink />
   <Description />
@@ -51,7 +51,23 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment />
+  <Environment>
+    <Variable>
+      <Value />
+      <Name>GOODREADS_API_KEY</Name>
+      <Mode />
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode />
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode />
+    </Variable>
+  </Environment>
   <Labels />
   <Config
     Name="Web UI Port"
@@ -63,7 +79,7 @@
     Display="always"
     Required="true"
     Mask="false"
-  >3456</Config>
+  />
   <Config
     Name="Audiobook Source Folder Path"
     Target="/source"
@@ -73,7 +89,7 @@
     Display="always"
     Required="true"
     Mask="false"
-  >/mnt/user/Media/Audiobook Scraper/source</Config>
+  />
   <Config
     Name="Audiobook Output Folder Path"
     Target="/final"
@@ -83,9 +99,20 @@
     Display="always"
     Required="true"
     Mask="false"
-  >/mnt/user/Media/Audiobook Scraper/final</Config>
+  />
   <Config
-    Name="AppData Config Path"
+    Name="Goodreads API Key"
+    Target="GOODREADS_API_KEY"
+    Default=""
+    Mode=""
+    Description="Used to get extra metadata from the Goodreads API (not required)"
+    Type="Variable"
+    Display="always"
+    Required="false"
+    Mask="false"
+  />
+  <Config
+    Name="AppData Path"
     Target="/config"
     Default="/mnt/user/appdata/audiobook-scraper"
     Mode="rw"
@@ -94,5 +121,27 @@
     Display="advanced-hide"
     Required="true"
     Mask="false"
-  >/mnt/user/appdata/audiobook-scraper</Config>
+  />
+  <Config
+    Name="PUID"
+    Target="PUID"
+    Default="99"
+    Mode=""
+    Description="The User ID to run the app with"
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false"
+  >99</Config>
+  <Config
+    Name="PGID"
+    Target="PGID"
+    Default="100"
+    Mode=""
+    Description="The Group ID to run the app with"
+    Type="Variable"
+    Display="advanced-hide"
+    Required="false"
+    Mask="false"
+  >100</Config>
 </Container>
