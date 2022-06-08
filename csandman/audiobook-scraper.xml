@@ -54,7 +54,12 @@
   <Environment>
     <Variable>
       <Value />
-      <Name>GOODREADS_API_KEY</Name>
+      <Name>GOODREADS_USER</Name>
+      <Mode />
+    </Variable>
+    <Variable>
+      <Value />
+      <Name>GOODREADS_PASS</Name>
       <Mode />
     </Variable>
     <Variable>
@@ -101,11 +106,22 @@
     Mask="false"
   />
   <Config
-    Name="Goodreads API Key"
-    Target="GOODREADS_API_KEY"
+    Name="Goodreads Username"
+    Target="GOODREADS_USER"
     Default=""
     Mode=""
-    Description="Used to get extra metadata from the Goodreads API (not required)"
+    Description="The username for a Goodreads account, which is used to get extra metadata from the Goodreads API (not required)"
+    Type="Variable"
+    Display="always"
+    Required="false"
+    Mask="false"
+  />
+  <Config
+    Name="Goodreads Password"
+    Target="GOODREADS_PASS"
+    Default=""
+    Mode=""
+    Description="The password for the Goodreads account"
     Type="Variable"
     Display="always"
     Required="false"
@@ -140,7 +156,7 @@
     Mode=""
     Description="The Group ID to run the app with"
     Type="Variable"
-    Display="advanced-hide"
+    Display="advanced"
     Required="false"
     Mask="false"
   >100</Config>
