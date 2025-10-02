@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ComicTagger</Name>
+  <Repository>ghcr.io/danielcopper/comictagger</Repository>
+  <Registry>https://github.com/danielcopper/comictagger/pkgs/container/comictagger</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/comictagger/comictagger/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen</Support>
+  <Project>https://github.com/comictagger/comictagger/issues</Project>
+  <Overview>&#xD;
+ComicTagger is a multi-platform app for writing metadata to digital comics, written in Python and PyQt.</Overview>
+  <Category>Tools: MediaApp:Books</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/comictagger.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/csandman/docker-templates/master/csandman/comictagger.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled />
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Comics Path" Target="/comics" Default="" Mode="rw" Description="Comics" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/comictagger" Mode="rw" Description="Appdata" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/comictagger</Config>
+</Container>
